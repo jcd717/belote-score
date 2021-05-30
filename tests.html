@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <!-- <script src="tests.js"></script> -->
+    <script type="module">
+        import {onLoad,play500,sound500} from './tests.js';
+        window.onLoad=onLoad;
+        window.play500=play500;
+        window.sound500=sound500;
+        // window.sound500TXT=sound500TXT;
+    </script>
+</head>
+<body onload="onLoad();">
+    <button id="500" onclick="play500();">
+        500
+    </button>
+
+    <textarea id="console" rows="33" cols="80" readonly></textarea>
+</body>
+</html>

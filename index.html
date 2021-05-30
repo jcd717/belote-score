@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belote: Saisie des Scores</title>
+
+  <link rel="shortcut icon" href="Jack_of_clubs_fr.svg">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="backAndFront.js" defer></script>
+</head>
+
+<body onload="onLoad();">
+  <center>
+    <button id="saisir" onclick="">
+      Saisir un Score
+    </button>
+
+    <div id="tableau">
+      <table id="TableScore">
+        <thead id="EuxNous">
+          <tr>
+            <th>EUX</th>
+            <th>NOUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="scores" class="nombre">
+            <td>220</td>
+            <td>100</td>
+          </tr>
+          <tr id="entete-details">
+            <th colspan="2">Détails</th>
+          </tr>
+        </tbody>
+        <tfoot id="details" class="nombre">
+          <tr>
+            <td>150</td>
+            <td>10</td>
+            <td id="charEdit" class="blinking" onclick="modifier(0);">&Xi;</td>
+          </tr>
+          <tr>
+            <td>70</td>
+            <td>90</td>
+            <td id="charRemove" onclick="supprimer();">&times;</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <button id="reset" onclick="reset();">
+      Nouvelle Partie
+    </button>
+
+  </center>
+
+  <form id="popupSaisie" onsubmit="return recordSaisie();">
+    <div id="prisPar">
+      Pris par:
+      <input type="radio" id="prisParEux" name="prisPar" value="eux" checked>
+      <label for="prisParEux">Eux</label>
+      <input type="radio" id="prisParNous" name="prisPar" value="nous">
+      <label for="prisParEux">Nous</label>
+    </div>
+    <div id="score">
+      <label id="labelTextScore" for="textScore">Score:</label>
+      <input type="number" id="textScore" max="162" pattern="\d*" required>
+    </div>
+    <div id="capot">
+      Capot:
+      <input type="checkbox" id="capotPourEux" name="capotPour" value="eux" onclick="zeroOuUnCB(this);">
+      <label for="capotPourEux">Eux</label>
+      <input type="checkbox" id="capotPourNous" name="capotPour" value="nous" onclick="zeroOuUnCB(this);">
+      <label for="capotPourNous">Nous</label>
+    </div>
+    <div id="belote">
+      Belote:
+      <input type="checkbox" id="belotePourEux" name="belotePour" value="eux" onclick="zeroOuUnCB(this);">
+      <label for="belotePourEux">Eux</label>
+      <input type="checkbox" id="capotPourNous" name="belotePour" value="nous" onclick="zeroOuUnCB(this);">
+      <label for="belotePourNous">Nous</label>
+    </div>
+    <input type="submit">
+    <input type="reset">
+  </form>
+
+
+</body>
+
+</html>

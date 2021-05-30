@@ -1,0 +1,75 @@
+
+body {
+    font-family: Tahoma, Arial, Helvetica, sans-serif ;
+
+}
+/* 
+.blinking{
+    animation:blinkingText 3s cubic-bezier(1,0,0,1) infinite;
+}
+@keyframes blinkingText{
+    0%{ color: gray; }
+    25%{ color: transparent}
+    50%{ color: gray; }
+    75%{ color: transparent; }
+    100%{ color: gray; }
+} */
+
+/* body {
+    max-width: max-content;
+    margin: auto;
+} */
+
+#saisir,#reset {
+    margin: 0.7rem;
+    font-size: medium;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    font-weight: bold;
+}
+#reset {
+    color: red;
+}
+
+#TableScore {
+    border-collapse: collapse;
+    background-color: white;
+}
+#TableScore  td,th {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    border: 3px solid black;
+}
+#details td:last-child {
+  border :none;
+  background-color: white;
+  text-align: center;
+  color: gray;
+  cursor: pointer;
+}
+#EuxNous {
+    font-size: x-large;
+    background-color: gold;
+}
+#EuxNous th {
+    text-align: center;
+}
+#scores {
+    background-color: lightblue;
+}
+#scores td {
+    font-size: x-large;
+    font-weight: bold;
+}
+.nombre {
+    text-align: right;
+}
+#entete-details {
+    font-size: large;
+    background-color: antiquewhite;
+}
+#details tr:nth-child(even) {
+    background: #DDD;
+}
