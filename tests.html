@@ -7,11 +7,7 @@
     <title>Tests</title>
     <!-- <script src="tests.js"></script> -->
     <script type="module">
-        import {onLoad,play500,sound500} from './tests.js';
-        window.onLoad=onLoad;
-        window.play500=play500;
-        window.sound500=sound500;
-        // window.sound500TXT=sound500TXT;
+        import * as testModule from './tests.js';
     </script>
 </head>
 <body onload="onLoad();">

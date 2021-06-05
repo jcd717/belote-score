@@ -19,7 +19,7 @@ REM:
 
 "use strict";
 
-// pour que for( of ) fonctionne sur NodeList & HTMLCollection (pb avec mon iPhone 10.3.3)
+// pour que for( of ) fonctionne sur NodeList & HTMLCollection (pb avec mon iPhone iOS 10.3.3)
 /*
 cf https://stackoverflow.com/questions/22754315/for-loop-for-htmlcollection-elements
 This works because it attaches the Array iterator to both the NodeList and HTMLCollection prototypes 
