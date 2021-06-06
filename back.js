@@ -104,8 +104,8 @@ class ScoresSingleton {
 export const scores = new ScoresSingleton();
 
 
-export // pour debug
-    function calculerScore(score) {
+//export // pour debug
+function calculerScore(score) {
     // retourne un dictionnaire {Eux,Nous}
     let sommes = {};
     sommes[EuxOuNous.EUX] = sommes[EuxOuNous.NOUS] = 0;
@@ -127,10 +127,22 @@ export // pour debug
         sommes[score.prisPar] += score.score;
         sommes[pasPris] += complement;
         if (sommes[score.prisPar] == sommes[pasPris]) { // litige
-            litigesEnCours +=81;
-            sommes[score.prisPar] =(score.belote==score.prisPar)? 20 : 0;
-            sommes[pasPris]=81;
             litige = true;
+            if(score.belote==null) {
+                litigesEnCours += 81;
+                sommes[score.prisPar] = 0;
+                sommes[pasPris] = 81;
+            }
+            else if (score.belote == score.prisPar) {
+                litigesEnCours += 81;
+                sommes[score.prisPar] = 20;
+                sommes[pasPris] = 91;
+            }
+            else { // 91 partout belotes pour la défense
+                litigesEnCours += 91;
+                sommes[score.prisPar] = 0;
+                sommes[pasPris] = 91;
+            }
         }
         else if (sommes[score.prisPar] < sommes[pasPris]) { // dedans
             sommes[score.prisPar] -= score.score; // garde éventuellement les belotes
